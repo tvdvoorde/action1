@@ -1,5 +1,10 @@
 name: subaction
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+   inputs:
+     inputkey1:
+       description: 'input 1'
+       required: false
    
 jobs:
   hello-world:
