@@ -21,3 +21,13 @@ runs:
       shell: bash
     - run: date
       shell: bash
+    - name: Trigger Workflow
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.actions.createWorkflowDispatch({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            workflow_id: 'subaction.yaml',
+            ref: 'main',
+          })
