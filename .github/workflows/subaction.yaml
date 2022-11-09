@@ -1,4 +1,4 @@
-name: helloworld
+name: subaction
 on: workflow_dispatch
 
 jobs:
