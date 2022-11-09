@@ -1,9 +1,11 @@
 name: subaction
 on: workflow_dispatch
-
+   
 jobs:
   hello-world:
     runs-on: ubuntu-latest
     steps:
     - run: |
         echo "hello world"
+        echo "---"
+        echo  "${{ github.event.inputs.inputkey1 }}" 
