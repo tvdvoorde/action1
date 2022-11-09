@@ -1,0 +1,23 @@
+name: 'action1'
+description: 'Action 1'
+inputs:
+  input1:  # id of input
+    description: 'Input 1'
+    required: true
+    default: 'World'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello ${{ inputs.input1 }}.
+      shell: bash
+    - id: random-number-generator
+      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+      shell: bash
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+    - run: date
+      shell: bash
