@@ -1,0 +1,9 @@
+name: helloworld
+on: workflow_dispatch
+
+jobs:
+
+  hello-world:
+    runs-on: ubuntu-latest
+    - run: |
+        echo "hello world"
