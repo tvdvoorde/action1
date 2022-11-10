@@ -15,7 +15,9 @@ runs:
     - run: echo Hello ${{ inputs.input1 }}.
       shell: bash
     - run: echo "-ACTION-"
+      shell: bash
     - run: az account show 
+      shell: bash
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
