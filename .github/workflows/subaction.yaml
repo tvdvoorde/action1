@@ -7,10 +7,10 @@ on:
        required: false
    
 jobs:
-  hello-world:
+  subaction:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "hello world"
+        echo "hello"
         echo "---"
         echo  "${{ github.event.inputs.inputkey1 }}" 
