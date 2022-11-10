@@ -4,7 +4,7 @@ inputs:
   input1:  # id of input
     description: 'Input 1'
     required: true
-    default: 'World'
+    default: 'empty'
 outputs:
   random-number:
     description: "Random number"
@@ -12,8 +12,6 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.input1 }}.
-      shell: bash
     - run: echo "-ACTION-"
       shell: bash
     - run: az account show 
@@ -28,10 +26,14 @@ runs:
     - name: Trigger Workflow
       uses: actions/github-script@v6
       with:
+        github-token: ${{ inputs.input1 }}
         script: |
           github.rest.actions.createWorkflowDispatch({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
+            owner: 'tvdvoorde',
+            repo: 'action1',
             workflow_id: 'subaction.yaml',
             ref: 'main',
+            inputs: {
+              inputkey1: 'inputvalue1' 
+            },              
           })
