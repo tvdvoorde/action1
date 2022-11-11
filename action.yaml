@@ -14,6 +14,19 @@ runs:
         az account show 
         echo "input=${{ inputs.input1 }}"
       shell: bash
+    - name: Generate token
+      id: generate_token
+      uses: tibdex/github-app-token@v1
+      with:
+        app_id: "260702"
+        private_key: ${{ inputs.input1 }}
+        # Optional.
+        # repository: owner/repo
+      - name: Use token
+        env:
+          TOKEN: ${{ steps.generate_token.outputs.token }}
+        run: |
+          echo "The generated token is masked: ${TOKEN}"
     - name: Trigger Workflow
       uses: actions/github-script@v6
       with:
