@@ -13,6 +13,7 @@ runs:
         echo "---"
         az account show 
         echo "input=${{ inputs.input1 }}"
+      shell: bash
     - name: Trigger Workflow
       uses: actions/github-script@v6
       with:
