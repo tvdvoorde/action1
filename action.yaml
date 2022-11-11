@@ -20,8 +20,7 @@ runs:
       with:
         app_id: "260702"
         private_key: ${{ inputs.input1 }}
-        # Optional.
-        # repository: owner/repo
+        repository: tvdvoorde/action1
     - name: Use token
       shell: bash
       env:
