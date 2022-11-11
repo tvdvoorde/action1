@@ -23,6 +23,7 @@ runs:
         # Optional.
         # repository: owner/repo
     - name: Use token
+      shell: bash
       env:
         TOKEN: ${{ steps.generate_token.outputs.token }}
       run: |
