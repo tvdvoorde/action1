@@ -1,3 +1,7 @@
+# https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event
+
+# https://docs.github.com/en/rest/repos/repos#create-a-repository-dispatch-event
+
 name: 'action1'
 description: 'Action 1'
 inputs:
