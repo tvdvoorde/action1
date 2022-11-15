@@ -2,12 +2,13 @@ name: subaction
 
 on: 
   workflow_dispatch:
-  repository_dispatch:
-    types: [ create, delete ]
     inputs:
       inputkey1:
         description: 'input 1'
-        required: false
+        required: false  
+  repository_dispatch:
+    types: [ create, delete ]
+
    
 jobs:
   subaction:
