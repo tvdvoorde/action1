@@ -22,7 +22,7 @@ runs:
         private_key: ${{ inputs.input1 }}
         repository: tvdvoorde/action1
     - name: Trigger
-      uses: bash
+      shell: bash
       run: |
         curl
          -X POST \
