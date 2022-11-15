@@ -1,6 +1,7 @@
 name: subaction
 
 on: 
+  workflow_dispatch:
   repository_dispatch:
     types: [ create, delete ]
     inputs:
