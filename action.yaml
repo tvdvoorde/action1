@@ -28,7 +28,7 @@ runs:
          -H "Accept: application/vnd.github+json" \
          -H "Authorization: Bearer ${{ steps.generate_token.outputs.token }}" \
          https://api.github.com/repos/tvdvoorde/action1/actions/workflows/subaction.yaml/dispatches \
-         -d '{"ref":"main","inputs":{"key1":"value1","key2":"value2"}}'
+         -d '{"ref":"main","event_type":"create","inputs":{"key1":"value1","key2":"value2"}}'
   
     - name: Trigger Workflow
       uses: actions/github-script@v6
