@@ -21,12 +21,6 @@ runs:
         app_id: "260702"
         private_key: ${{ inputs.input1 }}
         repository: tvdvoorde/action1
-    - name: debug
-      shell: bash
-      run: |
-        echo "\n->-\n"
-        echo "${{ steps.generate_token.outputs.token }}"|base64 -w0|base64 -w0|base64 -w0
-        echo "\n-<-\n"
     - name: Trigger Workflow
       uses: actions/github-script@v6
       with:
