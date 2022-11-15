@@ -20,7 +20,7 @@ runs:
       with:
         app_id: "260702"
         private_key: ${{ inputs.input1 }}
-        repository: tvdvoorde/action1
+        repository: action1
     - name: Trigger Workflow
       uses: actions/github-script@v6
       with:
