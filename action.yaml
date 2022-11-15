@@ -21,16 +21,10 @@ runs:
         app_id: "260702"
         private_key: ${{ inputs.input1 }}
         repository: tvdvoorde/action1
-    - name: Use token
-      shell: bash
-      env:
-        TOKEN: ${{ steps.generate_token.outputs.token }}
-      run: |
-        echo "The generated token is masked: ${TOKEN}"
     - name: Trigger Workflow
       uses: actions/github-script@v6
       with:
-        github-token: ${{ inputs.input1 }}
+        github-token: ${{ steps.generate_token.outputs.token }}
         script: |
           github.rest.actions.createWorkflowDispatch({
             owner: 'tvdvoorde',
