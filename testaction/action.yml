@@ -4,9 +4,8 @@ runs:
   using: "composite"
   steps:
     - name: script
+      shell: bash    
       run: |
         echo "---testaction---"
         ls -ltr
- 
-        
-      shell: bash
+
