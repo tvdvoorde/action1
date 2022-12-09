@@ -1,0 +1,12 @@
+name: 'testaction'
+description: 'testaction'
+runs:
+  using: "composite"
+  steps:
+    - name: script
+      run: |
+        echo "---testaction---"
+        ls -ltr
+ 
+        
+      shell: bash
