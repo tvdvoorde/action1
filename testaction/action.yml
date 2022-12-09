@@ -8,4 +8,6 @@ runs:
       run: |
         echo "---testaction---"
         ls -ltr
+        echo "\n---\n"
+        echo ${{ github.action_path }}
 
